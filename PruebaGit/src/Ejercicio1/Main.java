@@ -47,10 +47,10 @@ public class Main {
         System.out.print("LISTA --> ");
         li.mostrarLista();
         System.out.print("DESENCOLO EN ESTE ORDEN --> ");
-        n = (Integer) li.desencolar();
+        n = li.desencolar();
         while(n != null){
             System.out.print(n+" ");
-            n = (Integer) li.desencolar();
+            n = li.desencolar();
         }
         System.out.println("");
     } //FUNCIÓN VACÍA PARA PROBAR LAS COLAS
@@ -67,10 +67,10 @@ public class Main {
         System.out.print("LISTA --> ");
         li.mostrarLista();
         System.out.print("DESAPILO EN ESTE ORDEN --> ");
-        n = (Integer) li.desapilar();
+        n = li.desapilar();
         while(n != null){
             System.out.print(n+" ");
-            n = (Integer) li.desapilar();
+            n = li.desapilar();
         }
         System.out.println("");
     } //FUNCIÓN VACÍA PARA PROBAR LAS PILAS

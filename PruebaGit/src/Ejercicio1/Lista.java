@@ -71,26 +71,50 @@ public class Lista implements Cola,Pila{
         System.out.println();
     }
 
-    //COLAS
+
     @Override
-    public void encolar(Object objetoAEncolar) {
-        Integer integerAEncolar = (Integer)objetoAEncolar;
+    public void encolar(Integer integerAEncolar) {
         insertarAlFinal(integerAEncolar);
     }
 
     @Override
-    public Object desencolar() {
-        return borrarEn(1);
+    public Integer desencolar() {
+        return borrarEn(1); //Posicion 1 porque yo quiero borrar el primer elemento.
     }
-    //PILAS
+
     @Override
-    public void apilar(Object objetoAApilar) {
-        Integer integerAApilar = (Integer) objetoAApilar;
+    public void apilar(Integer integerAApilar) {
         insertarAlFinal(integerAApilar);
     }
 
     @Override
-    public Object desapilar() {
-        return borrarEn(listaDeNumeros.length); //null si la pila está vacía
+    public Integer desapilar() {
+        return borrarEn(listaDeNumeros.length); //Null si la pila está vacía
     }
+
+
+    //COLAS
+//    @Override
+//    public void encolar(Object objetoAEncolar) {
+//        Integer integerAEncolar = (Integer)objetoAEncolar;
+//        insertarAlFinal(integerAEncolar);
+//    }
+
+    //    @Override
+//    public Object desencolar() {
+//        return borrarEn(1);
+//    }
+
+
+    //PILAS
+//    @Override
+//    public void apilar(Object objetoAApilar) {
+//        Integer integerAApilar = (Integer) objetoAApilar;
+//        insertarAlFinal(integerAApilar);
+//    }
+//
+//    @Override
+//    public Object desapilar() {
+//        return borrarEn(listaDeNumeros.length); //null si la pila está vacía
+//    }
 }
