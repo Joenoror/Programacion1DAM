@@ -3,11 +3,11 @@ package Ejercicio1;
 import java.util.Arrays;
 import java.util.Objects;
 
-public class Lista implements Cola,Pila{
+public class Lista implements ColaDoble,Pila{
     Integer[] listaDeNumeros;
 
     //Constructor que inicializa la tabla con tamanio 0
-    Lista(){
+    public Lista(){
         listaDeNumeros = new Integer[0];
     }
 
@@ -94,6 +94,15 @@ public class Lista implements Cola,Pila{
     public void mostrarVersiones(){
         System.out.println(Pila.version);
         System.out.println(Cola.version);
+    }
+
+    @Override
+    public void encolarCabeza(Integer nuevo) {
+        insertarAlPrincipio(nuevo);
+    }
+    @Override
+    public Integer desencolarFinal() {
+        return borrarEn(listaDeNumeros.length);
     }
 
     //COLAS
