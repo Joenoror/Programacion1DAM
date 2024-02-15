@@ -105,6 +105,8 @@ public class Lista implements ColaDoble,Pila{
         return borrarEn(listaDeNumeros.length);
     }
 
+
+
     //COLAS
 //    @Override
 //    public void encolar(Object objetoAEncolar) {

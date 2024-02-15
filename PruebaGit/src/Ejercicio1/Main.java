@@ -5,16 +5,28 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Lista li = new Lista();
-
-        li.encolarCabeza(1);
-        li.encolarCabeza(5);
-        li.encolarCabeza(3);
-
+//
+        Integer n;
+        li.encolarMultiple(5, 5);
         li.mostrarLista();
+        System.out.print("DESENCOLO EN ESTE ORDEN --> ");
+        n = li.desencolar();
+        while(n != null){
+            System.out.print(n+" ");
+            n = li.desencolar();
+        }
+        System.out.println("");
 
-        li.desencolarFinal();
 
-        li.mostrarLista();
+//        li.encolarCabeza(1);
+//        li.encolarCabeza(5);
+//        li.encolarCabeza(3);
+//
+//        li.mostrarLista();
+//
+//        li.desencolarFinal();
+//
+//        li.mostrarLista();
 
 //        testColas(li);
 //        testPilas(li);

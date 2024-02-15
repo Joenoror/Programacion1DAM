@@ -5,19 +5,15 @@ package EjemploSonido;
 public class Main {
     public static void main(String[] args) {
 
-        Sonido son = new Sonido() {
-            @Override
-            public void voz() {
-                System.out.println("¡Jajejijojuuuu!");
-            }
-        };
-        son.voz();
 
 
 
+//
+//
 //        Sonido son;
 //        son = new Gato();
 //        son.voz();
+//
 //        son = new Perro();
 //        son.voz();
 

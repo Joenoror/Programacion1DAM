@@ -7,10 +7,12 @@ public interface Cola{
     public void encolar(Integer integerAEncolar);
     Integer desencolar();
 
-    default void encolarMultiple(Integer integerAEncolar, int repeticiones){
-        for (int i = 0; i < repeticiones; i++) {
+    default void encolarMultiple(Integer integerAEncolar, int numeroDeVecesAEncolar){
+        for (int i = 0; i < numeroDeVecesAEncolar; i++) {
             encolar(integerAEncolar);
         }
     }
+
+
 
 }
