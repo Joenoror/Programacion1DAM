@@ -7,7 +7,7 @@ public class Lista implements ColaDoble,Pila{
     Integer[] listaDeNumeros;
 
     //Constructor que inicializa la tabla con tamanio 0
-    Lista(){
+    public Lista(){
         listaDeNumeros = new Integer[0];
     }
 
@@ -100,7 +100,6 @@ public class Lista implements ColaDoble,Pila{
     public void encolarCabeza(Integer nuevo) {
         insertarAlPrincipio(nuevo);
     }
-
     @Override
     public Integer desencolarFinal() {
         return borrarEn(listaDeNumeros.length);

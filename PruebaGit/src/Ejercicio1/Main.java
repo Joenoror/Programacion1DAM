@@ -16,9 +16,6 @@ public class Main {
 
         li.mostrarLista();
 
-
-
-
 //        testColas(li);
 //        testPilas(li);
 
@@ -29,7 +26,7 @@ public class Main {
     }
 
 
-    static void testColas(Lista li){
+    public static void testColas(Lista li){
         System.out.println("PROBAMOS LAS COLAS. ENCOLO");
 
         System.out.println("Introducir un número");
