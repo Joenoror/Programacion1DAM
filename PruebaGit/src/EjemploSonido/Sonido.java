@@ -1,3 +1,5 @@
+package EjemploSonido;
+
 public interface Sonido {
     int version = 1;
     void voz(); //Emite sonido

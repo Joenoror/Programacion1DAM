@@ -1,3 +1,5 @@
+package EjemploSonido;
+
 public class Piano implements Sonido{
     @Override
     public void voz() {
