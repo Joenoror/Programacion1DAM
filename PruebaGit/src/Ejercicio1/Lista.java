@@ -13,7 +13,7 @@ public class Lista implements Cola,Pila{
 
     //Obtener el nº de elementos de la tabla
 
-    public int numeroDeElementos(){
+    int numeroDeElementos(){
         return listaDeNumeros.length;
     }
 
@@ -48,7 +48,6 @@ public class Lista implements Cola,Pila{
             elementoAEliminar = listaDeNumeros[posicion];
             System.arraycopy(listaDeNumeros,posicion+1, listaDeNumeros, posicion, listaDeNumeros.length -1- posicion);
             listaDeNumeros = Arrays.copyOf(listaDeNumeros, listaDeNumeros.length-1);
-
         }
         return elementoAEliminar;
     }
@@ -92,6 +91,10 @@ public class Lista implements Cola,Pila{
         return borrarEn(listaDeNumeros.length); //Null si la pila está vacía
     }
 
+    public void mostrarVersiones(){
+        System.out.println(Pila.version);
+        System.out.println(Cola.version);
+    }
 
     //COLAS
 //    @Override

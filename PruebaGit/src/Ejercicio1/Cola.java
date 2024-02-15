@@ -1,9 +1,12 @@
 package Ejercicio1;
 
 public interface Cola{
-//  public void encolar(Object objetoAEncolar);
-//  Object desencolar();
+
+    int version = 1;
+
     public void encolar(Integer integerAEncolar);
     Integer desencolar();
+
+    
 
 }

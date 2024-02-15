@@ -26,8 +26,10 @@ public class Main {
 //        li.mostrarLista();
 
 
-        testColas(li);
+//        testColas(li);
         testPilas(li);
+
+        li.mostrarVersiones();
 
 
 //        System.out.println(li.buscar(99));
