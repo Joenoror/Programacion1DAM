@@ -20,21 +20,32 @@ public class Socio implements Comparable{
         return (int)fechaNacimiento.until(LocalDate.now(), ChronoUnit.YEARS);
     }
 
-//    @Override
-//    public int compareTo(Object ob){
-//        int resultado;
-//        Socio otroSocio = (Socio)ob;
-//        if(id < otroSocio.id) resultado = -1;
-//        else if(id > otroSocio.id) resultado = 1;
-//        else resultado = 0;
-//
-//        return  resultado;
-//    }
-
     @Override
     public int compareTo(Object ob){
-        return id - ((Socio)ob).id;
+        int resultado;
+        Socio otroSocio = (Socio)ob;
+        if(id < otroSocio.id) resultado = -1;
+        else if(id > otroSocio.id) resultado = 1;
+        else{
+            resultado = 0;
+        }
+
+        return  resultado;
     }
+
+//    @Override
+//    boolean equals(Object obj){
+//        boolean resultado;
+//        Socio otroSocio = (Socio) obj;
+//        if(otroSocio.id == this.id) resultado = true;
+//        else resultado = false;
+//        return resultado;
+//    }
+
+//    @Override
+//    public int compareTo(Object ob){
+//        return id - ((Socio)ob).id;
+//    }
 
 //    @Override
 //    public int compareTo(Object ob){

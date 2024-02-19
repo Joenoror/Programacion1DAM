@@ -72,8 +72,8 @@ public class Lista implements ColaDoble,Pila{
 
 
     @Override
-    public void encolar(Integer integerAEncolar) {
-        insertarAlFinal(integerAEncolar);
+    public void encolar(Object integerAEncolar) {
+        insertarAlFinal((Integer) integerAEncolar);
     }
 
     @Override

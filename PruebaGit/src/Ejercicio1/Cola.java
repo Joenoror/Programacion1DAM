@@ -4,7 +4,7 @@ public interface Cola{
 
     int version = 1;
 
-    public void encolar(Integer integerAEncolar);
+    public void encolar(Object integerAEncolar);
     Integer desencolar();
 
     default void encolarMultiple(Integer integerAEncolar, int numeroDeVecesAEncolar){

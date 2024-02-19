@@ -5,8 +5,15 @@ package EjemploSonido;
 public class Main {
     public static void main(String[] args) {
 
+        int[] vector = {1,3,2,7,5};
 
-
+        for (int i = 0; i < vector.length; i++) {
+            for (int j = 0; j < vector.length; j++) {
+                int aux = vector[i];
+                vector[i+1] = vector[i];
+                vector[i] = aux;
+            }
+        }
 
 //
 //

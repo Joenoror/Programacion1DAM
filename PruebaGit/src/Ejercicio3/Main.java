@@ -5,17 +5,23 @@ import java.util.Comparator;
 
 public class Main {
     public static void main(String[] args) {
+
+        Object ob = 5;
+        int numero = (int) ob;
+
+
         //Socios
         Socio s1 = new Socio(2, "Paco", "20-02-1990");
         Socio s2 = new Socio(10, "José Enrique", "17-10-1993");
         Socio s3 = new Socio(1, "Lucas", "20-10-1930");
+        Socio s4 = new Socio(2, "Luis", "21-02-1990");
 
         //Comprobamos orden
         int resultado = s1.compareTo(s2);
         System.out.println(resultado);
 
         //Creo lista de socios y la ordeno
-        Socio[] listaSocios = new Socio[] {s1,s2,s3};
+        Socio[] listaSocios = new Socio[] {s4,s1,s3,s2};
         Arrays.sort(listaSocios);
 
         //Muestro la lista ordenada
