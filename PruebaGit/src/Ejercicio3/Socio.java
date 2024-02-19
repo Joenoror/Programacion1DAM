@@ -20,19 +20,29 @@ public class Socio implements Comparable{
         return (int)fechaNacimiento.until(LocalDate.now(), ChronoUnit.YEARS);
     }
 
+//    @Override
+//    public int compareTo(Object ob){
+//        int resultado;
+//        Socio otroSocio = (Socio)ob;
+//        if(id < otroSocio.id) resultado = -1;
+//        else if(id > otroSocio.id) resultado = 1;
+//        else resultado = 0;
+//
+//        return  resultado;
+//    }
+
     @Override
     public int compareTo(Object ob){
-        int resultado;
-        Socio otroSocio = (Socio)ob;
-        if(id < otroSocio.id) resultado = -1;
-        else if(id > otroSocio.id) resultado = 1;
-        else resultado = 0;
-
-        return  resultado;
+        return id - ((Socio)ob).id;
     }
 
+//    @Override
+//    public int compareTo(Object ob){
+//        return nombre.compareTo(((Socio)ob).nombre); //De esta forma se invoca compareTo() de la clase String
+//    }
+
     public String toString(){
-        return "Id: " + id + " Nombre: " + nombre + " Edad: " + edad();
+        return "Id: " + id + " Nombre: " + nombre + " Edad: " + edad() + "\n";
     }
 
 }
