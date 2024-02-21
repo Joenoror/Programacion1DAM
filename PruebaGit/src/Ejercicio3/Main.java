@@ -42,10 +42,10 @@ public class Main {
 //        //Creo objetos comparadores de edades
         Comparator c1 = new ComparaEdades();
         Comparator c2 = c1.reversed();
-        Arrays.sort(listaSocios, c1);
+
+        Arrays.sort(listaSocios,c1);
         System.out.println(Arrays.deepToString(listaSocios));
-        Arrays.sort(listaSocios, c2);
-        System.out.println(Arrays.deepToString(listaSocios));
+
 
     }
 
