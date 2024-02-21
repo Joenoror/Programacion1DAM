@@ -9,11 +9,13 @@ public class Socio implements Comparable{
     int id; //id del socio
     String nombre;
     LocalDate fechaNacimiento;
-    public Socio(int id, String nombre, String fechaNacimiento){
+    long dni;
+    public Socio(int id, String nombre, String fechaNacimiento, long dni){
         this.id = id;
         this.nombre = nombre;
         DateTimeFormatter f = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         this.fechaNacimiento = LocalDate.parse(fechaNacimiento, f);
+        this.dni = dni;
     }
 
     int edad(){
@@ -31,15 +33,15 @@ public class Socio implements Comparable{
 //        return  resultado;
 //    }
 
-    @Override
-    public int compareTo(Object ob){
-        return id - ((Socio)ob).id;
-    }
-
 //    @Override
 //    public int compareTo(Object ob){
-//        return nombre.compareTo(((Socio)ob).nombre); //De esta forma se invoca compareTo() de la clase String
+//        return id - ((Socio)ob).id;
 //    }
+
+    @Override
+    public int compareTo(Object ob){
+        return nombre.compareTo(((Socio)ob).nombre); //De esta forma se invoca compareTo() de la clase String
+    }
 
     public String toString(){
         return "Id: " + id + " Nombre: " + nombre + " Edad: " + edad() + "\n";
