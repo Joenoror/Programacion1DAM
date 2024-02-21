@@ -6,17 +6,13 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        int a = new Scanner(System.in).nextInt();
-        int b = new Scanner(System.in).nextInt();
-
+        int a = 10;
+        int b = 0;
         try{
             int c = a/b;
-
-            System.out.println("El resultado es: " + c);
-        }catch (ArithmeticException e){
-            System.out.println("Error: división por cero");
-        }catch (InputMismatchException e){
-            System.out.println("Error: Has introducido un dato que no es entero");
+        }
+        catch (Exception e){
+            System.out.println("Estoy en el primer catch");
         }
     }
 }
