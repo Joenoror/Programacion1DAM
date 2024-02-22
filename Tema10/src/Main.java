@@ -6,13 +6,23 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        int a = 10;
-        int b = 0;
+        int a, b;
+        a=5;
+        b=0;
+        int c = 0;
+
         try{
-            int c = a/b;
+            c = a/b;
+            System.out.println(c);
+        }catch (NullPointerException e){
+            System.out.println("ERROR: " + e.getMessage());
+        }catch (Exception e){
+            System.out.println("ERROR desconocido");
         }
-        catch (Exception e){
-            System.out.println("Estoy en el primer catch");
-        }
+
+
+
+
+
     }
 }
