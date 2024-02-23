@@ -7,8 +7,24 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws IOException {
 
+        try{
+            System.out.println("Introduce el nombre del archivo");
+            String nombreArchivo = new Scanner(System.in).nextLine();
+            FileReader in = new FileReader(".\\Archivos\\"+ nombreArchivo + ".txt");
+            System.out.println("Archivo encontrado");
+        }catch(IOException e){
+            System.out.println("ERROR: El archivo no existe");
+        }
+
+
         //10.1 Excepciones
         //ejemploEnteros();
+
+//        leerEntero();
+
+
+
+
 
         //10.1.2 - Excepciones de usuario
         //ejemploEdadNegativa();
@@ -16,11 +32,25 @@ public class Main {
         //10.2 Flujos de entrada de texto
 
 
-        String texto = "";
-        ejemploEntradaTexto(texto);
+//        String texto = "";
+//        ejemploEntradaTexto(texto);
         //ejemploEntradaTextoConBuffered(texto);
 
 
+    }
+
+
+    static Integer leerEntero(){
+        Integer entero = null;
+        while(entero == null){
+            try{
+                System.out.println("Introduce un entero");
+                entero = new Scanner(System.in).nextInt();
+            } catch (InputMismatchException e){
+                System.out.println("ERROR: No has introducido un número entero");
+            }
+        }
+        return entero;
     }
 
     static void ejemploEnteros(){
@@ -32,8 +62,6 @@ public class Main {
         try{
             c = a/b;
             System.out.println(c);
-        }catch (NullPointerException e){
-            System.out.println("ERROR: " + e.getMessage());
         }catch (Exception e){
             System.out.println("ERROR desconocido");
         }
@@ -42,12 +70,17 @@ public class Main {
         try{
             System.out.println("Introducir edad: ");
             int edad = new Scanner(System.in).nextInt();
-            if(edad < 0) throw new ExceptionEdadNegativa();
+            System.out.println("Introducir altura: ");
+            double altura = new Scanner(System.in).nextDouble();
+            if(edad < 0 | altura < 0){
+                throw new ExceptionValorNegativo();
+            }
             else{
                 //Implementación de edad
                 System.out.println("Edad correcta: " + edad);
+                System.out.println("Altura correcta: " + altura);
             }
-        } catch (ExceptionEdadNegativa e){
+        } catch (ExceptionValorNegativo e){
             System.out.println(e);
         }
     }
