@@ -7,14 +7,45 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws IOException {
 
+        FileReader in = null;
+        String texto = "";
+        BufferedReader in2 = null;
+
         try{
-            System.out.println("Introduce el nombre del archivo");
-            String nombreArchivo = new Scanner(System.in).nextLine();
-            FileReader in = new FileReader(".\\Archivos\\"+ nombreArchivo + ".txt");
-            System.out.println("Archivo encontrado");
-        }catch(IOException e){
-            System.out.println("ERROR: El archivo no existe");
+            in2 = new BufferedReader( new FileReader("D:\\Salesianos\\Programacion\\Programacion1DAM\\Tema10\\src\\numeros"));
+            System.out.println("FICHERO ENCONTRADO");
+            String textoGuardado = in2.readLine();
+            while(textoGuardado != null){
+                System.out.println("-ESCRIBO-");
+                texto = texto + textoGuardado;
+                textoGuardado = in2.readLine();
+            }
+
+        } catch (IOException e){
+            e.getMessage();
+        } finally {
+            if(in2 != null){
+                try{
+                    System.out.println("CERRAMOS EL FICHERO");
+                    in2.close();
+                } catch (IOException e){
+                    e.getMessage();
+                }
+            }
+            else{
+                System.out.println("EL FICHERO NUNCA SE LLEGÓ A ENCONTRAR");
+            }
         }
+        System.out.println(texto);
+
+//        try{
+//            System.out.println("Introduce el nombre del archivo");
+//            String nombreArchivo = new Scanner(System.in).nextLine();
+//            FileReader in = new FileReader(".\\Archivos\\"+ nombreArchivo + ".txt");
+//            System.out.println("Archivo encontrado");
+//        }catch(IOException e){
+//            System.out.println("ERROR: El archivo no existe");
+//        }
 
 
         //10.1 Excepciones
