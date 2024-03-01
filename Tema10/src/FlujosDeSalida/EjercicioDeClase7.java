@@ -9,10 +9,10 @@ public class EjercicioDeClase7 {
         BufferedWriter out = null;
         try {
             out = new BufferedWriter(new FileWriter(".\\Archivos\\salida.txt"));
-            String cad = "Vida antes que muerte. Fuerza antes que debilidad. Viaje antes que destino";
+            String cad = "Niño, no eres más tonto porque no puedes";
             out.write(cad);
             out.newLine();
-            cad = "Brandon Sanderson - El camino de los reyes.";
+            cad = "Mi madre el sábado";
             for (int i = 0; i < cad.length(); i++) {
                 out.write(cad.charAt(i));
             }

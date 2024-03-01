@@ -1,5 +1,10 @@
+Monica
 5
+Angel
 6
-6
-67
+Jose
+6.5
+Lucas
+6.3
+Alex
 7
