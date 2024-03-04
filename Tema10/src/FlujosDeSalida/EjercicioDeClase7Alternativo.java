@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class EjercicioDeClase7Alternativo {
     public static void main(String[] args) {
-        try (BufferedWriter out = new BufferedWriter(new FileWriter(".\\Archivos\\salida.txt"));){
+        try (BufferedWriter out = new BufferedWriter(new FileWriter(".\\Archivos\\salida.txt"))){
             String cad = "Vida antes que muerte. Fuerza antes que debilidad. Viaje antes que destino";
             out.write(cad);
             out.newLine();
@@ -15,7 +15,7 @@ public class EjercicioDeClase7Alternativo {
                 out.write(cad.charAt(i));
             }
         } catch (IOException e){
-            e.getMessage();
+            System.out.println(e.getMessage());
         }
     }
 }
