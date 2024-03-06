@@ -15,20 +15,36 @@ public class Agenda {
         }
     }
 
-    void buscarContacto(String claveDeBusqueda){
-        System.out.println();
+    void buscarContacto(){
+        System.out.println("Introduce el contacto a buscar");
+        String claveDeBusqueda = new Scanner(System.in).nextLine();
+        System.out.println("CONTACTOS ENCONTRADOS:");
+        for (int i = 0; i < listaDeContactos.length; i++) {
+            if(listaDeContactos[i].nombre.contains(claveDeBusqueda)){
+                System.out.println("["+i+"]" + listaDeContactos[i].toString());
+            }
+        }
+    }
+
+    boolean existeContacto(Contacto contacto){
+        boolean existe = false;
+        for (int i = 0; i < listaDeContactos.length; i++) {
+            if(listaDeContactos[i].nombre.toLowerCase().equals(contacto.nombre.toLowerCase())){
+                existe = true;
+            }
+        }
+        return existe;
     }
 
     void aniadirContacto(Contacto contacto){
         if(listaDeContactos.length < CONTACTOS_MAXIMOS){
-            listaDeContactos = Arrays.copyOf(listaDeContactos, listaDeContactos.length+1);
-            System.out.println("Amplio el tamaño de la agenda, ahora tiene un total de " + listaDeContactos.length + " contactos.");
-            listaDeContactos[listaDeContactos.length - 1] = contacto;
-            System.out.println("Añado el contacto " + contacto.toString());
-        }
-        else {
-            System.out.println("ERROR: Agenda completa.");
-        }
+            if(!existeContacto(contacto)){
+                listaDeContactos = Arrays.copyOf(listaDeContactos, listaDeContactos.length+1);
+                //System.out.println("Amplio el tamaño de la agenda, ahora tiene un total de " + listaDeContactos.length + " contactos.");
+                listaDeContactos[listaDeContactos.length - 1] = contacto;
+                //System.out.println("Añado el contacto " + contacto.toString());
+            } else System.out.println("ERROR: El contacto introducido ya existe.");
+        } else System.out.println("ERROR: Agenda completa.");
     }
 
     Contacto crearContacto(){

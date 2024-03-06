@@ -11,7 +11,7 @@ public class EjercicioDeClase9 {
 
         try (BufferedReader in = new BufferedReader(new FileReader(".\\Archivos\\listaDeContactos.txt")))
         {
-
+            //INTRODUZCO LOS DATOS DE MI FICHERO EN MI AGENDA
             String intentoDeLectura = in.readLine();
             while(intentoDeLectura != null)
             {
@@ -28,21 +28,19 @@ public class EjercicioDeClase9 {
 
                     switch (opcion){
                         case 1 -> agenda.aniadirContacto(agenda.crearContacto());
-                        case 2 -> System.out.println("Aquí va el método de buscar un contacto");
+                        case 2 -> agenda.buscarContacto();
                         case 3 -> agenda.mostrarAgenda();
+                        case 4 -> System.out.println("HAS SELECCIONADO SALIR DE LA AGENDA");
                         default -> System.out.println("ERROR. Opción no válida");
                     }
-
-
                 } catch (Exception e){
-                    System.out.println("Has introducido mal el valor solicitado.");
+                    System.out.println("ERROR. Opción no disponible.");
                 }
 
             }
         } catch (IOException e){
             System.out.println(e.getMessage());
         }
-
         try(BufferedWriter out = new BufferedWriter(new FileWriter(".\\Archivos\\listaDeContactos.txt"))){
             for (var contacto: agenda.listaDeContactos) {
                 out.write(contacto.toString());
@@ -54,11 +52,10 @@ public class EjercicioDeClase9 {
 
     }
 
-
     static void Menu(){
         System.out.println("------AGENDA PERSONAL------");
         System.out.println("-1. Nuevo contacto-");
-        System.out.println("-2. BUscar contacto-");
+        System.out.println("-2. Buscar contacto-");
         System.out.println("-3. Mostrar contactos-");
         System.out.println("-4. Salir-");
         System.out.println("---------------------------");
