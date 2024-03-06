@@ -5,8 +5,7 @@ import java.util.Scanner;
 
 public class Agenda {
     Contacto[] listaDeContactos = new Contacto[0];
-    final int CONTACTOS_MAXIMOS = 20;
-
+    final private int CONTACTOS_MAXIMOS = 20;
 
     void mostrarAgenda(){
         System.out.println("MUESTRO LA AGENDA:");
@@ -24,6 +23,12 @@ public class Agenda {
                 System.out.println("["+i+"]" + listaDeContactos[i].toString());
             }
         }
+
+//        for (var contacto: listaDeContactos) {
+//            if(contacto.nombre.contains(claveDeBusqueda)){
+//                System.out.println("["+contacto+"]" + contacto.toString());
+//            }
+//        }
     }
 
     boolean existeContacto(Contacto contacto){
@@ -48,12 +53,27 @@ public class Agenda {
     }
 
     Contacto crearContacto(){
-        System.out.println("Introduce un nombre");
-        String nombre = new Scanner(System.in).nextLine();
-        System.out.println("Introduce un número de teléfono");
-        String telefono = new Scanner(System.in).nextLine();
-
-        Contacto nuevoContacto = new Contacto(nombre, telefono);
+        Contacto nuevoContacto = null;
+        boolean nombreCorrecto = false;
+        String nombre;
+        String telefono;
+        try{
+            while(!nombreCorrecto){
+                System.out.println("Introduce un nombre");
+                nombre = new Scanner(System.in).nextLine();
+                System.out.println("Introduce un número de teléfono");
+                telefono = new Scanner(System.in).nextLine();
+                //Ejemplo de posible comprobación
+                if(telefono.length() == 9){
+                    if(telefono.toLowerCase().matches("[0-9]*")){
+                        nuevoContacto = new Contacto(nombre, telefono);
+                        nombreCorrecto = true;
+                    } else System.out.println("ERROR: Tu teléfono incluye caracteres que no son números");
+                } else System.out.println("ERROR: Tu teléfono no tiene exactamente 9 números");
+            }
+        } catch (Exception e){
+            System.out.println("Error al introducir la información");
+        }
         return nuevoContacto;
     }
 
