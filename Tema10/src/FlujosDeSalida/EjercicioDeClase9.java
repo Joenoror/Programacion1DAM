@@ -15,7 +15,7 @@ public class EjercicioDeClase9 {
             String intentoDeLectura = in.readLine();
             while(intentoDeLectura != null)
             {
-                String[] separacion = intentoDeLectura.split(" ");
+                String[] separacion = intentoDeLectura.split(";");
                 agenda.aniadirContacto(new Contacto(separacion[0],separacion[1]));
                 intentoDeLectura = in.readLine();
             }
@@ -40,6 +40,8 @@ public class EjercicioDeClase9 {
             }
         } catch (IOException e){
             System.out.println(e.getMessage());
+        } catch (Exception e){
+            System.out.println("ERROR: Se ha detectado un problema en la lectura de los datos");
         }
         try(BufferedWriter out = new BufferedWriter(new FileWriter(".\\Archivos\\listaDeContactos.txt"))){
             for (var contacto: agenda.listaDeContactos) {
