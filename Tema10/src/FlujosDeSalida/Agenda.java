@@ -20,6 +20,7 @@ public class Agenda {
     @XmlTransient
     final int CONTACTOS_MAXIMOS = 20;
 
+
     static void exportarXML(Agenda agenda){
         try{
             JAXBContext context = JAXBContext.newInstance(Agenda.class);
@@ -32,6 +33,7 @@ public class Agenda {
     }
 
     void mostrarAgenda(){
+
         System.out.println("MUESTRO LA AGENDA:");
         for (int i = 0; i < listaDeContactos.length; i++) {
             System.out.println("["+i+"]" + listaDeContactos[i].toString());
