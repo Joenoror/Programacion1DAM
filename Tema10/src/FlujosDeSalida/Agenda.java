@@ -1,11 +1,35 @@
 package FlujosDeSalida;
 
+import xml.Club;
+import xml.Socio;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.annotation.*;
+import java.io.FileWriter;
 import java.util.Arrays;
 import java.util.Scanner;
 
+@XmlRootElement(name="agenda") //El elemento raíz se llamará socio
+@XmlType(propOrder = {"listaDeContactos"})
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Agenda {
+    @XmlElementWrapper(name = "contactos")
+    @XmlElement(name = "contacto")
     Contacto[] listaDeContactos = new Contacto[0];
-    final private int CONTACTOS_MAXIMOS = 20;
+    @XmlTransient
+    final int CONTACTOS_MAXIMOS = 20;
+
+    static void exportarXML(Agenda agenda){
+        try{
+            JAXBContext context = JAXBContext.newInstance(Agenda.class);
+            Marshaller m = context.createMarshaller();
+            m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+            m.marshal(agenda, new FileWriter(".\\Tema10\\src\\xml\\agenda.xml"));
+        } catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
 
     void mostrarAgenda(){
         System.out.println("MUESTRO LA AGENDA:");
@@ -23,12 +47,6 @@ public class Agenda {
                 System.out.println("["+i+"]" + listaDeContactos[i].toString());
             }
         }
-
-//        for (var contacto: listaDeContactos) {
-//            if(contacto.nombre.contains(claveDeBusqueda)){
-//                System.out.println("["+contacto+"]" + contacto.toString());
-//            }
-//        }
     }
 
     boolean existeContacto(Contacto contacto){
@@ -64,8 +82,8 @@ public class Agenda {
                 System.out.println("Introduce un número de teléfono");
                 telefono = new Scanner(System.in).nextLine();
                 //Ejemplo de posible comprobación
-                if(telefono.length() == 9){
-                    if(telefono.toLowerCase().matches("[0-9]*")){
+                if(telefono.length() == 9){ //Se puede omitir esto cambiando la exp. reg. poniendo *9?
+                    if(telefono.matches("[0-9]*")){
                         nuevoContacto = new Contacto(nombre, telefono);
                         nombreCorrecto = true;
                     } else System.out.println("ERROR: Tu teléfono incluye caracteres que no son números");

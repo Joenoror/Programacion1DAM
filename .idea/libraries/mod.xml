@@ -1,14 +1,10 @@
 <component name="libraryTable">
   <library name="mod">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/../../../Users/Jose/Downloads/Java_xml_test/mod" />
-      <root url="file://$USER_HOME$/Downloads/Libraries/mod" />
-      <root url="file://D:/Users/Jose/Downloads/Java_xml_test/mod" />
+      <root url="file://$PROJECT_DIR$/mod" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
-    <jarDirectory url="file://$USER_HOME$/Downloads/Libraries/mod" recursive="false" />
-    <jarDirectory url="file://D:/Users/Jose/Downloads/Java_xml_test/mod" recursive="false" />
-    <jarDirectory url="file://$PROJECT_DIR$/../../../Users/Jose/Downloads/Java_xml_test/mod" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/mod" recursive="false" />
   </library>
 </component>

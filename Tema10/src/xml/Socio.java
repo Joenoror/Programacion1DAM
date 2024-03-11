@@ -1,5 +1,6 @@
 package xml;
 
+
 import javax.xml.bind.annotation.*;
 
 @XmlRootElement(name="socio") //El elemento raíz se llamará socio
@@ -10,6 +11,7 @@ public class Socio {
     private Integer identificacion;
     @XmlElement(name = "nombre")
     private String nombreSocio;
+    @XmlElement(name = "direccion")
     private String direccion;
     @XmlElement(name = "alta")
     private String fechaAlta;
@@ -20,6 +22,14 @@ public class Socio {
         this.nombreSocio = nombreSocio;
         this.direccion = direccion;
         this.fechaAlta = fechaAlta;
+    }
+
+    public String getNombreSocio() {
+        return nombreSocio;
+    }
+
+    void mostrarMiDireccion(int direccion){
+        System.out.println(this.direccion + " y le sumo " + direccion);
     }
 
     @Override

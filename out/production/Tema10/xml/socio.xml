@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<socio id="23">
-    <nombre>Martin Fisher</nombre>
-    <direccion>43 Bass St</direccion>
-    <alta>12/12/2020</alta>
+<socio id="1">
+    <alta>01/01/1000</alta>
+    <direccion>C/Salesianos 10</direccion>
+    <nombre>José Enrique</nombre>
 </socio>
-

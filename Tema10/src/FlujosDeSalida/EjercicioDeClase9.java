@@ -1,5 +1,9 @@
 package FlujosDeSalida;
 
+import xml.Club;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.Unmarshaller;
 import java.io.*;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -8,6 +12,18 @@ public class EjercicioDeClase9 {
     public static void main(String[] args) {
 
         Agenda agenda = new Agenda();
+
+        System.out.println("Introduce un 1 si quieres leer los datos desde XML");
+
+
+        try{
+            JAXBContext context = JAXBContext.newInstance(Agenda.class);
+            Unmarshaller um = context.createUnmarshaller();
+            agenda = (Agenda) um.unmarshal(new File(".\\Tema10\\src\\xml\\agenda.xml"));
+        } catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+
 
         try (BufferedReader in = new BufferedReader(new FileReader(".\\Archivos\\listaDeContactos.txt")))
         {
@@ -21,7 +37,7 @@ public class EjercicioDeClase9 {
             }
 
             int opcion = -1;
-            while (opcion != 4){
+            while (opcion != 5){
                 Menu();
                 try {
                     opcion = new Scanner(System.in).nextInt();
@@ -30,7 +46,8 @@ public class EjercicioDeClase9 {
                         case 1 -> agenda.aniadirContacto(agenda.crearContacto());
                         case 2 -> agenda.buscarContacto();
                         case 3 -> agenda.mostrarAgenda();
-                        case 4 -> System.out.println("HAS SELECCIONADO SALIR DE LA AGENDA");
+                        case 4 -> Agenda.exportarXML(agenda);
+                        case 5 -> System.out.println("HAS SELECCIONADO SALIR DE LA AGENDA");
                         default -> System.out.println("ERROR. Opción no válida");
                     }
                 } catch (Exception e){
@@ -40,8 +57,6 @@ public class EjercicioDeClase9 {
             }
         } catch (IOException e){
             System.out.println(e.getMessage());
-        } catch (Exception e){
-            System.out.println("ERROR: Se ha detectado un problema en la lectura de los datos");
         }
         try(BufferedWriter out = new BufferedWriter(new FileWriter(".\\Archivos\\listaDeContactos.txt"))){
             for (var contacto: agenda.listaDeContactos) {
@@ -59,9 +74,10 @@ public class EjercicioDeClase9 {
         System.out.println("-1. Nuevo contacto-");
         System.out.println("-2. Buscar contacto-");
         System.out.println("-3. Mostrar contactos-");
-        System.out.println("-4. Salir-");
+        System.out.println("-4. Exportar XML-");
+        System.out.println("-5. Salir-");
         System.out.println("---------------------------");
-        System.out.println("Inserte un valor entre 1 y 4");
+        System.out.println("Inserte un valor entre 1 y 5");
         System.out.println("---------------------------");
     }
 
