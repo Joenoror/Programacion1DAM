@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <club>
-    <nombre>Futbolistas</nombre>
+    <nombre>Profesores</nombre>
     <socios>
         <socio id="1">
-            <nombre>Fran</nombre>
-            <direccion>Calle irse a comer un kebab los viernes</direccion>
-            <alta>01/01/1111</alta>
+            <nombre>José Enrique</nombre>
+            <direccion>C/Salesianos 10</direccion>
+            <alta>01/01/1000</alta>
         </socio>
         <socio id="2">
-            <nombre>Yuna el grande</nombre>
-            <direccion>La primera fila 100%</direccion>
-            <alta>01/01/2222</alta>
+            <nombre>Juan Carlos</nombre>
+            <direccion>C/Salesianos 11</direccion>
+            <alta>01/01/2000</alta>
         </socio>
     </socios>
 </club>
