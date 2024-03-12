@@ -31,3 +31,7 @@ public class EjercicioDeClase7 {
 
     }
 }
+
+//BufferedWriter(crea un flujo de escritura);
+//FileWriter(ruta del archivo);
+//out = new BufferedWriter(new FileWriter(".\\Archivos\\salida.txt"));

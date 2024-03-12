@@ -14,16 +14,21 @@ public class Main {
 
         Futbolista f1 = new Futbolista("123456789A", "Ronaldo", 50, 1000);
         Futbolista f2 = new Futbolista("123456789B", "Serresiete", 36, 3);
+        Futbolista f3 = new Futbolista("123456789C", "RaulGonzalezBlanco", 94, 1991991, Posicion.DELANTERO);
+        Futbolista f4 = new Futbolista("113456789C", "Ronaldinho", 10, 3, "ceNtrocaMpista");
 
         Equipo equipo = new Equipo();
-        equipo.plantilla = new Futbolista[]{f1, f2};
+        equipo.plantilla = new Futbolista[]{f1, f2,f3,f4};
 
         System.out.println(Arrays.deepToString(equipo.plantilla));
+
 
         ComparaEdades comparaEdades = new ComparaEdades();
         Arrays.sort(equipo.plantilla, comparaEdades);
 
         System.out.println(Arrays.deepToString(equipo.plantilla));
+
+        //Arrays.deepToString --> imprimo el array completo
 
 
     }

@@ -1,14 +1,34 @@
+
+enum Posicion {DELANTERO, DEFENSA, CENTROCAMPISTA, PORTERO;}
 public class Futbolista implements Comparable{
     String dni;
     String nombre;
     int edad;
     int numeroDeGoles;
 
+    Posicion posicion;
+
     Futbolista(String dni, String nombre, int edad, int numeroDeGoles){
         this.dni = dni;
         this.nombre = nombre;
         this.edad = edad;
         this.numeroDeGoles = numeroDeGoles;
+    }
+
+    Futbolista(String dni, String nombre, int edad, int numeroDeGoles, Posicion posicion){
+        this.dni = dni;
+        this.nombre = nombre;
+        this.edad = edad;
+        this.numeroDeGoles = numeroDeGoles;
+        this.posicion = posicion;
+    }
+
+    Futbolista(String dni, String nombre, int edad, int numeroDeGoles, String posicion){
+        this.dni = dni;
+        this.nombre = nombre;
+        this.edad = edad;
+        this.numeroDeGoles = numeroDeGoles;
+        this.posicion = Posicion.valueOf(posicion.toUpperCase());
     }
 
     @Override

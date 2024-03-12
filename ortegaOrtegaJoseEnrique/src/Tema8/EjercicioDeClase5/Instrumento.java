@@ -19,11 +19,7 @@ abstract public class Instrumento {
     Instrumento(NotasMusicales[] notasMusicales){
         this.notas = notasMusicales;
     }
-
-    Instrumento(){
-        
-    }
-
+    Instrumento(){}
     void add(NotasMusicales notaNueva){
         notas = Arrays.copyOf(notas, notas.length+1);
         notas[notas.length-1] = notaNueva;
