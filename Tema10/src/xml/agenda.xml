@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<agenda>
+    <contactos>
+        <contacto>
+            <nombre>Jose Enrique</nombre>
+            <telefono>111111111</telefono>
+        </contacto>
+    </contactos>
+</agenda>
