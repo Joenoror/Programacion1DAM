@@ -30,17 +30,17 @@ public class ejercicioDeClase1 {
         try (ObjectInputStream flujoEntrada = new ObjectInputStream(new FileInputStream(".\\Archivos\\datos.dat"))){
             //Procederemos con la lectura
             //OPCION 1 - LEER ENTERO A ENTERO
-//            int[] lecturaDelArrayDeEnteros = new int[10];
+            //int[] lecturaDelArrayDeEnteros = new int[10];
 //            for (int i = 0; i < lecturaDelArrayDeEnteros.length; i++) {
 //                lecturaDelArrayDeEnteros[i] = flujoEntrada.readInt();
 //            }
             //OPCION 2 - LEER T0DO EL OBJETO DE UNA VEZ
             int[] lecturaDelArrayDeEnteros = (int[]) flujoEntrada.readObject();
             System.out.println(Arrays.toString(lecturaDelArrayDeEnteros));
-        } catch (IOException e){
+        } catch (IOException | ClassCastException e){
             System.out.println(e.getMessage());
-        } catch (ClassNotFoundException e){
-            System.out.println(e.getMessage());
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
 }
