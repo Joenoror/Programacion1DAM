@@ -1,8 +1,8 @@
 import java.io.*;
 import java.util.Arrays;
-
 public class ejercicioDeClase3 {
     public static void main(String[] args) {
+
 
         Socio[] socios = new Socio[]
                 {
