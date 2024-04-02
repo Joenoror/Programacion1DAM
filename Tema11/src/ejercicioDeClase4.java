@@ -1,2 +1,0 @@
-public class ejercicioDeClase4 {
-}

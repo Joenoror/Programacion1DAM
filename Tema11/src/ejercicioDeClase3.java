@@ -1,53 +1,47 @@
 import java.io.*;
 import java.util.Arrays;
-
 public class ejercicioDeClase3 {
     public static void main(String[] args) {
 
-        Socio[] socios = new Socio[4];
-        socios[0] = new Socio("1", "Jose");
-        socios[1] = new Socio("2", "Pepe");
-        socios[2] = new Socio("100", "Enrique");
-        socios[3] = new Socio("30", "Maria");
 
-        //Mostramos los socios
-        System.out.println(Arrays.deepToString(socios));
+        Socio[] socios = new Socio[]
+                {
+                new Socio(1, "Pepe"),
+                        new Socio(2, "Juan"),
+                        new Socio(3, "Lucas"),
+                        new Socio(4, "Raul")
+                };
 
-        ObjectOutputStream  salida= null;
-        //Creamos un flujo de salida binario y escribimos en él
-        try{
-            salida = new ObjectOutputStream(new FileOutputStream("socios.dat"));
-            salida.writeObject(socios);
-        } catch(FileNotFoundException e){
-            System.out.println("ERROR: Fallo al encontrar el archivo");
-        } catch(IOException e){
-            System.out.println("ERROR: Fallo al guardar el fichero");
+        String rutaDeArchivo = "socios.dat";
+
+        //ESCRITURA FORMA DESGLOSADA
+        ObjectOutputStream flujoSalida = null;
+        try {
+            flujoSalida = new ObjectOutputStream(new FileOutputStream(rutaDeArchivo));
+            flujoSalida.writeObject(socios);
+        } catch (IOException e){
+            System.out.println("ERROR: Archivo no encontrado o no se ha podido abrir");;
         } finally {
-            if(salida != null) {
-                try {
-                    salida.close();
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
+            if(flujoSalida != null){
+                try{
+                    flujoSalida.close();
+                } catch (IOException e){
+                    System.out.println(e.getMessage());
                 }
             }
         }
 
-        //Creamos un nuevo array de socios para que no haya trampa
-        Socio[] nuevoArray = new Socio[4];
+        //LECTURA FORMA COMPACTA
+        try(ObjectInputStream flujoEntrada = new ObjectInputStream(new FileInputStream(rutaDeArchivo))){
 
-        //Recogemos la información del archivo socios.dat
-        try(ObjectInputStream entrada = new ObjectInputStream(new FileInputStream("socios.dat"))) {
-            nuevoArray = (Socio[]) entrada.readObject();
-        } catch(IOException e){
-            System.out.println("ERROR: Fallo al leer el fichero");
-        } catch (ClassNotFoundException e) {
-            System.out.println("ERROR: Fallo al importar la clase del fichero");
+            Socio[] arrayDeLectura = (Socio[]) flujoEntrada.readObject();
+            System.out.println(Arrays.deepToString(arrayDeLectura));
+
+        } catch (Exception e){
+            System.out.println(e.getMessage());
         }
 
-        //Mostramos los socios
-        System.out.println(Arrays.deepToString(nuevoArray));
+
 
     }
 }
-
-

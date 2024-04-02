@@ -1,17 +1,19 @@
 import java.io.Serializable;
 
 public class Socio implements Serializable {
-
-    String dni;
+    int id;
     String nombre;
-    public Socio(String dni, String nombre){
-        this.dni = dni;
+
+    Socio(int id, String nombre){
+        this.id = id;
         this.nombre = nombre;
     }
 
     @Override
     public String toString() {
-        return dni+";"+nombre;
+        return "Socio{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                '}';
     }
 }
-
