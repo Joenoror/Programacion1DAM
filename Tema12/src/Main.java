@@ -7,12 +7,12 @@ import java.util.Comparator;
 public class Main {
     public static void main(String[] args) {
 
-        Contenedor<?> cObj = new Contenedor<Integer>();
 
 
-        Contenedor<Integer> test = new Contenedor<>();
-        Integer[] listaDeIntegers = {1,2,3,6,9,null,0};
-        System.out.println(Contenedor.numeroDeNulos(listaDeIntegers));
+//        Cliente c1 = new Cliente();
+//        Contenedor<Integer> test = new Contenedor<>();
+//        Integer[] listaDeIntegers = {1,2,3,6,9,null,0};
+//        System.out.println(Contenedor.numeroDeNulos(listaDeIntegers));
 
 //
 //        Comparator<Integer> ordenInteger = Comparator.naturalOrder();

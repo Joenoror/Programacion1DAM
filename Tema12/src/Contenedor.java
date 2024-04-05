@@ -1,7 +1,9 @@
 import java.util.Arrays;
 
-public class Contenedor<T> {
-    private T objeto;
+public class Contenedor <T> {
+    public T objeto;
+
+    private T[] tabla;
     public Contenedor(){
     }
     public Contenedor(T nuevo){
