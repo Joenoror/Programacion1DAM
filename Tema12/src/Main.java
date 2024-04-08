@@ -1,14 +1,42 @@
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Comparator;
 
 public class Main {
     public static void main(String[] args) {
 
 
+        ArrayList<Cliente> listaDeClientes = new ArrayList<>();
 
+        Collection coleccionDeClientes = listaDeClientes;
+
+        Cliente c1 = new Cliente("0001", "Maria", "01/01/1995");
+        coleccionDeClientes.add(new Cliente("0000", "Paco", "10/10/2010"));
+        System.out.println(coleccionDeClientes.add(c1));
+        System.out.println(coleccionDeClientes);
+        System.out.println(coleccionDeClientes);
+        System.out.println(coleccionDeClientes.size());
+        System.out.println(coleccionDeClientes.isEmpty());
+        System.out.println(coleccionDeClientes);
+        System.out.println(coleccionDeClientes.contains(c1));
+        coleccionDeClientes.clear();
+        System.out.println(coleccionDeClientes);
+
+
+
+
+
+
+//        System.out.println(coleccionDeClientes.remove("pepepeppepep"));
+//        System.out.println(coleccionDeClientes);
+//        System.out.println(coleccionDeClientes.remove(new Cliente("Paco")));
+//        System.out.println(coleccionDeClientes);
+//        System.out.println(coleccionDeClientes.remove(c1));
+//        System.out.println(coleccionDeClientes);
 //        Cliente c1 = new Cliente();
 //        Contenedor<Integer> test = new Contenedor<>();
 //        Integer[] listaDeIntegers = {1,2,3,6,9,null,0};
