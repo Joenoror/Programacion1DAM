@@ -6,13 +6,14 @@ public class Contenedor <T> {
     private T[] tabla;
     public Contenedor(){
     }
-    public Contenedor(T nuevo){
+    public  Contenedor(T nuevo){
         objeto = nuevo;
     }
-    void guardar(T nuevo){
-        objeto = nuevo;
+    <U> void  guardar(U nuevo){
+        objeto = (T)nuevo;
     }
-    T extraer() {
+
+     T extraer() {
         T res = objeto;
         objeto = null;
         return res;

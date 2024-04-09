@@ -42,6 +42,6 @@ public class Cliente implements Comparable<Cliente>{
                 "dni='" + dni + '\'' +
                 ", nombre='" + nombre + '\'' +
                 ", edad=" + edad()+
-                '}';
+                '}' + "\n" ;
     }
 }
