@@ -8,25 +8,53 @@ import java.util.Comparator;
 
 public class Main {
     public static void main(String[] args) {
+//
 
 
-        ArrayList<Cliente> listaDeClientes = new ArrayList<>();
+        //COLECCIÓN 1
+        Collection coleccionClientes1  = new ArrayList<>();;
+        coleccionClientes1.add(new Cliente("001","Paco", "17/10/1993"));
+        coleccionClientes1.add(new Cliente("002","Marta", "05/05/2005"));
 
-        Collection coleccionDeClientes = listaDeClientes;
+//COLECCIÓN 2
+        Collection coleccionClientes2  = new ArrayList<>();;
+        coleccionClientes2.add(new Cliente("001","Paco", "17/10/1993"));
+        coleccionClientes2.add(new Cliente("002","Marta", "05/05/2005"));
 
-        Cliente c1 = new Cliente("0001", "Maria", "01/01/1995");
-        coleccionDeClientes.add(new Cliente("0000", "Paco", "10/10/2010"));
-        System.out.println(coleccionDeClientes.add(c1));
-        System.out.println(coleccionDeClientes);
-        System.out.println(coleccionDeClientes);
-        System.out.println(coleccionDeClientes.size());
-        System.out.println(coleccionDeClientes.isEmpty());
-        System.out.println(coleccionDeClientes);
-        System.out.println(coleccionDeClientes.contains(c1));
-        coleccionDeClientes.clear();
-        System.out.println(coleccionDeClientes);
+        System.out.println("Compruebo que en la colección 1 se encuentre todo lo que hay en la 2 -->" + coleccionClientes1.containsAll(coleccionClientes2));
+        System.out.println("Compruebo que en la colección 2 se encuentre todo lo que hay en la 1 -->" + coleccionClientes2.containsAll(coleccionClientes1));
+
+        Cliente nuevoCliente = new Cliente("038","Luis", "30/03/2004");
+        coleccionClientes1.add(nuevoCliente);
 
 
+        System.out.println("Compruebo que en la colección 1 se encuentre todo lo que hay en la 2 -->" + coleccionClientes1.containsAll(coleccionClientes2));
+        System.out.println("Compruebo que en la colección 2 se encuentre todo lo que hay en la 1 -->" + coleccionClientes2.containsAll(coleccionClientes1));
+
+
+
+
+
+
+
+//
+//        ArrayList<Cliente> listaDeClientes = new ArrayList<>();
+//
+//        Collection coleccionDeClientes = listaDeClientes;
+//
+//        Cliente c1 = new Cliente("0001", "Maria", "01/01/1995");
+//        coleccionDeClientes.add(new Cliente("0000", "Paco", "10/10/2010"));
+//        System.out.println(coleccionDeClientes.add(c1));
+//        System.out.println(coleccionDeClientes);
+//        System.out.println(coleccionDeClientes);
+//        System.out.println(coleccionDeClientes.size());
+//        System.out.println(coleccionDeClientes.isEmpty());
+//        System.out.println(coleccionDeClientes);
+//        System.out.println(coleccionDeClientes.contains(c1));
+//        coleccionDeClientes.clear();
+//        System.out.println(coleccionDeClientes);
+//
+//
 
 
 

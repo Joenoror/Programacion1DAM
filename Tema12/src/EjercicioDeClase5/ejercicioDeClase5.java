@@ -1,4 +1,4 @@
-package ejercicioDeClase5;
+package EjercicioDeClase5;
 
 import java.util.ArrayList;
 import java.util.Collection;
