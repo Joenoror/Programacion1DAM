@@ -1,37 +1,84 @@
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
+import java.util.*;
 import java.util.Comparator;
 
 public class Main {
     public static void main(String[] args) {
+
+
+
+        ArrayList<Integer> listaDeEnteros = new ArrayList<>();
+        ArrayList<Integer> listaDeEnteros2 = new ArrayList<>();
+
+        Integer[] arrayDeEnteros = new Integer[]{4,5,6,7,8,89,7,6,6,6,5,3,3,3,23,3,23};
+        listaDeEnteros2.addAll(Arrays.asList(arrayDeEnteros));
+
+
+        //ORDENAR CON ARRAYS
+        Arrays.sort(arrayDeEnteros, new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return o2-o1;
+            }
+        });
+
+
+        //ORDENAR CON LISTAS
+        listaDeEnteros2.sort(new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return o2 - o1;
+            }
+        });
+
+        System.out.println(Arrays.deepToString(arrayDeEnteros));
+        System.out.println(listaDeEnteros2);
+
+
+//        for (int i = 0; i < 5; i++) {
+//            listaDeEnteros.add(new Scanner(System.in).nextInt());
+//        }
+//
+//        System.out.println(listaDeEnteros);
+//
+//        System.out.println(listaDeEnteros.set(2,3));
+//
+//        System.out.println(listaDeEnteros);
+//
+//        listaDeEnteros.add(0,100);
+//
+//        System.out.println(listaDeEnteros);
+//
+//        listaDeEnteros.addAll(0,listaDeEnteros2);
+//
+//        System.out.println(listaDeEnteros);
+//
 //
 
 
-        //COLECCIÓN 1
-        Collection coleccionClientes1  = new ArrayList<>();;
-        coleccionClientes1.add(new Cliente("001","Paco", "17/10/1993"));
-        coleccionClientes1.add(new Cliente("002","Marta", "05/05/2005"));
-
-//COLECCIÓN 2
-        Collection coleccionClientes2  = new ArrayList<>();;
-        coleccionClientes2.add(new Cliente("001","Paco", "17/10/1993"));
-        coleccionClientes2.add(new Cliente("002","Marta", "05/05/2005"));
-
-        System.out.println("Compruebo que en la colección 1 se encuentre todo lo que hay en la 2 -->" + coleccionClientes1.containsAll(coleccionClientes2));
-        System.out.println("Compruebo que en la colección 2 se encuentre todo lo que hay en la 1 -->" + coleccionClientes2.containsAll(coleccionClientes1));
-
-        Cliente nuevoCliente = new Cliente("038","Luis", "30/03/2004");
-        coleccionClientes1.add(nuevoCliente);
-
-
-        System.out.println("Compruebo que en la colección 1 se encuentre todo lo que hay en la 2 -->" + coleccionClientes1.containsAll(coleccionClientes2));
-        System.out.println("Compruebo que en la colección 2 se encuentre todo lo que hay en la 1 -->" + coleccionClientes2.containsAll(coleccionClientes1));
-
-
+//        //COLECCIÓN 1
+//        Collection coleccionClientes1  = new ArrayList<>();;
+//        coleccionClientes1.add(new Cliente("001","Paco", "17/10/1993"));
+//        coleccionClientes1.add(new Cliente("002","Marta", "05/05/2005"));
+//
+////COLECCIÓN 2
+//        Collection coleccionClientes2  = new ArrayList<>();;
+//        coleccionClientes2.add(new Cliente("001","Paco", "17/10/1993"));
+//        coleccionClientes2.add(new Cliente("002","Marta", "05/05/2005"));
+//
+//        System.out.println("Compruebo que en la colección 1 se encuentre todo lo que hay en la 2 -->" + coleccionClientes1.containsAll(coleccionClientes2));
+//        System.out.println("Compruebo que en la colección 2 se encuentre todo lo que hay en la 1 -->" + coleccionClientes2.containsAll(coleccionClientes1));
+//
+//        Cliente nuevoCliente = new Cliente("038","Luis", "30/03/2004");
+//        coleccionClientes1.add(nuevoCliente);
+//
+//
+//        System.out.println("Compruebo que en la colección 1 se encuentre todo lo que hay en la 2 -->" + coleccionClientes1.containsAll(coleccionClientes2));
+//        System.out.println("Compruebo que en la colección 2 se encuentre todo lo que hay en la 1 -->" + coleccionClientes2.containsAll(coleccionClientes1));
+//
+//
 
 
 
