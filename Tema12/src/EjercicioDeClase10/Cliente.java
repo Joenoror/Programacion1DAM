@@ -1,9 +1,11 @@
+package EjercicioDeClase10;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Objects;
 
-public class Cliente implements Comparable<Cliente>{
+public class Cliente implements Comparable<Cliente> {
 
     String dni;
     String nombre;
@@ -26,14 +28,28 @@ public class Cliente implements Comparable<Cliente>{
         return (int) fechaNacimiento.until(LocalDate.now(), ChronoUnit.YEARS);
     }
 
+//    @Override
+//    public boolean equals(Object o) {
+//        return dni.equals(((Cliente)o).dni);
+//    }
+
+
     @Override
     public boolean equals(Object o) {
-        return dni.equals(((Cliente)o).dni);
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Cliente client = (Cliente) o;
+        return Objects.equals(dni, client.dni);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(dni);
     }
 
     @Override
     public int compareTo(Cliente o) {
-        return dni.compareTo(o.dni);
+        return edad()-(o.edad());
     }
 
     @Override
@@ -44,4 +60,9 @@ public class Cliente implements Comparable<Cliente>{
                 ", edad=" + edad()+
                 '}' + "\n" ;
     }
+
+//    @Override
+//    public int compareTo(Object o) {
+//        return dni.compareTo(((Cliente)o).dni);
+//    }
 }

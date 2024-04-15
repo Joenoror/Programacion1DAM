@@ -6,16 +6,16 @@ import java.util.Objects;
 public class ExplicacionIterator {
     public static void main(String[] args) {
 
-        ArrayList<Cliente> listaDeClientes = new ArrayList<Cliente>();
-        Collection<Cliente> numeros = listaDeClientes;
+        ArrayList<Client> listaDeClientes = new ArrayList<Client>();
+        Collection<Client> numeros = listaDeClientes;
 
-        listaDeClientes.add(new Cliente("001","Paco", "17/10/1993"));
-        listaDeClientes.add(new Cliente("002","Marta", "05/05/2005"));
+        listaDeClientes.add(new Client("001","Paco", "17/10/1993"));
+        listaDeClientes.add(new Client("002","Marta", "05/05/2005"));
 
-        Iterator<Cliente> it = numeros.iterator();
+        Iterator<Client> it = numeros.iterator();
 
         for (; it.hasNext(); ) {
-            Cliente p = it.next();
+            Client p = it.next();
             if(p.nombre.equals("Paco")){
                 it.remove();
             }
