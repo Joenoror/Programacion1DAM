@@ -11,7 +11,7 @@ public class Cliente implements Comparable<Cliente> {
     String nombre;
     LocalDate fechaNacimiento;
 
-    Cliente(String dni, String nombre, String fechaNacimiento){
+    public Cliente(String dni, String nombre, String fechaNacimiento){
         this.dni = dni;
         this.nombre = nombre;
         //Convertir un String a formato LocalDate con un patrón
@@ -49,7 +49,7 @@ public class Cliente implements Comparable<Cliente> {
 
     @Override
     public int compareTo(Cliente o) {
-        return edad()-(o.edad());
+        return this.dni.compareTo(o.dni);
     }
 
     @Override
@@ -60,6 +60,9 @@ public class Cliente implements Comparable<Cliente> {
                 ", edad=" + edad()+
                 '}' + "\n" ;
     }
+
+
+
 
 //    @Override
 //    public int compareTo(Object o) {

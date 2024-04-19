@@ -26,12 +26,6 @@ public class Client implements Comparable<Client> {
         return (int) fechaNacimiento.until(LocalDate.now(), ChronoUnit.YEARS);
     }
 
-//    @Override
-//    public boolean equals(Object o) {
-//        return dni.equals(((Cliente)o).dni);
-//    }
-
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -47,7 +41,7 @@ public class Client implements Comparable<Client> {
 
     @Override
     public int compareTo(Client o) {
-        return edad()-(o.edad());
+        return dni.compareTo(o.dni);
     }
 
     @Override
@@ -59,8 +53,4 @@ public class Client implements Comparable<Client> {
                 '}' + "\n" ;
     }
 
-//    @Override
-//    public int compareTo(Object o) {
-//        return dni.compareTo(((Cliente)o).dni);
-//    }
 }
