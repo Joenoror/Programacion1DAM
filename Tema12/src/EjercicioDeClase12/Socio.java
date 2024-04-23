@@ -1,15 +1,26 @@
 package EjercicioDeClase12;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Objects;
 
-public class Socio implements Comparable<Socio>{
+public class Socio implements Comparable<Socio>, Serializable {
 
+    private int id;
     String dni;
     String nombre;
     LocalDate fechaAlta;
+
+    Socio(int id, String dni, String nombre, String fechaAlta) {
+        this.id = id;
+        this.dni = dni;
+        this.nombre = nombre;
+        //Convertir un String a formato LocalDate con un patrón
+        DateTimeFormatter formatoFechas= DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        this.fechaAlta = LocalDate.parse(fechaAlta,formatoFechas);
+    }
 
     Socio(String dni, String nombre, String fechaAlta) {
         this.dni = dni;
@@ -18,6 +29,13 @@ public class Socio implements Comparable<Socio>{
         DateTimeFormatter formatoFechas= DateTimeFormatter.ofPattern("dd/MM/yyyy");
         this.fechaAlta = LocalDate.parse(fechaAlta,formatoFechas);
     }
+
+    Socio(String dni){
+        this.dni = dni;
+    }
+
+    Socio(){}
+
 
     int antiguedad(){
         return (int) fechaAlta.until(LocalDate.now(), ChronoUnit.YEARS);
@@ -32,12 +50,17 @@ public class Socio implements Comparable<Socio>{
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hashCode(dni);
+    public int compareTo(Socio o) {
+        return this.dni.compareTo(o.dni);
     }
 
     @Override
-    public int compareTo(Socio o) {
-        return this.dni.compareTo(o.dni);
+    public String toString() {
+        return "Socio{" +
+                "id=" + id +
+                ", dni='" + dni + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", fechaAlta=" + antiguedad() +
+                '}' + "\n";
     }
 }

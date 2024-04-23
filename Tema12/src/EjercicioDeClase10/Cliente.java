@@ -51,7 +51,7 @@ public class Cliente implements Comparable<Cliente> {
 
     @Override
     public int compareTo(Cliente o) {
-        return edad()-(o.edad());
+        return this.dni.compareTo(o.dni);
     }
 
     @Override
@@ -62,6 +62,9 @@ public class Cliente implements Comparable<Cliente> {
                 ", edad=" + edad()+
                 '}' + "\n" ;
     }
+
+
+
 
 //    @Override
 //    public int compareTo(Object o) {
