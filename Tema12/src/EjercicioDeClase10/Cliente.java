@@ -7,11 +7,11 @@ import java.util.Objects;
 
 public class Cliente implements Comparable<Cliente> {
 
-    String dni;
-    String nombre;
-    LocalDate fechaNacimiento;
+    public String dni;
+    public String nombre;
+    public LocalDate fechaNacimiento;
 
-    Cliente(String dni, String nombre, String fechaNacimiento){
+    public Cliente(String dni, String nombre, String fechaNacimiento){
         this.dni = dni;
         this.nombre = nombre;
         //Convertir un String a formato LocalDate con un patrón
@@ -19,8 +19,10 @@ public class Cliente implements Comparable<Cliente> {
         this.fechaNacimiento = LocalDate.parse(fechaNacimiento,formatoFechas);
     }
 
-    Cliente(String dni){
-        this.dni = dni;
+
+
+    public Cliente(String nombre){
+        this.nombre = nombre;
     }
 
 

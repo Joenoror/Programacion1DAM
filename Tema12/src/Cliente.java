@@ -3,13 +3,13 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Objects;
 
-public class Client implements Comparable<Client> {
+public class Cliente implements Comparable<Cliente> {
 
     String dni;
     String nombre;
     LocalDate fechaNacimiento;
 
-    Client(String dni, String nombre, String fechaNacimiento){
+    Cliente(String dni, String nombre, String fechaNacimiento){
         this.dni = dni;
         this.nombre = nombre;
         //Convertir un String a formato LocalDate con un patrón
@@ -17,27 +17,20 @@ public class Client implements Comparable<Client> {
         this.fechaNacimiento = LocalDate.parse(fechaNacimiento,formatoFechas);
     }
 
-    Client(String dni){
+    Cliente(String dni){
         this.dni = dni;
     }
-
 
     int edad(){
         return (int) fechaNacimiento.until(LocalDate.now(), ChronoUnit.YEARS);
     }
 
-//    @Override
-//    public boolean equals(Object o) {
-//        return dni.equals(((Cliente)o).dni);
-//    }
-
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Client client = (Client) o;
-        return Objects.equals(dni, client.dni);
+        Cliente cliente = (Cliente) o;
+        return Objects.equals(dni, cliente.dni);
     }
 
     @Override
@@ -46,8 +39,8 @@ public class Client implements Comparable<Client> {
     }
 
     @Override
-    public int compareTo(Client o) {
-        return edad()-(o.edad());
+    public int compareTo(Cliente o) {
+        return dni.compareTo(o.dni);
     }
 
     @Override
